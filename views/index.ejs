@@ -1,27 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <% include partials/head %> 
-</head>
+<html>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+<style>
+form {
+          width: 50%;
+        margin-left : 25%
+
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+
+.col-50 {
+  float: left;
+  width: 48%;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 <body>
-<% include partials/menu %>
+<input type=hidden name="oid" value="00Dp00000001k8B">
+<input type=hidden name="retURL" value="https://demo-thankyou.cs31.force.com/SubmissionEnd">
 
-<div class="container-fluid bg-3 text-center">    
-  <h3><%= page %></h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="ajeet.kumar@utilitarianlab.com">                                 -->
+<!--  ----------------------------------------------------------------------  -->
+<h3>Please fill your details</h3>
+ 
+ <div class="container">
+
+ <div class="row">
+ <label>Name</label><br>
+ <div class="col-50"><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" placeholder="First" required /></div>
+<div class="col-50"><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" placeholder="Last" required /></div>
 </div>
+<br>
+<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" required /><br>
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" required /><br>
 
+
+<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+
+<label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+<input type="hidden" name="Type_of_Business__c" value="Individual" />
+
+
+<input type="submit" name="submit">
+</div>
 </body>
-<% include partials/script %>
+</form>
 </html>
